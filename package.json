@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "test": "jest",
+    "test": "jest --coverage",
     "test-report": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "keywords": [
