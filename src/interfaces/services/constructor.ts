@@ -21,3 +21,7 @@ export interface IUnfsServiceLocal extends IUnfsService {
   service: "local";
   directory: string;
 }
+
+export interface IUnfsServiceMemory extends IUnfsService {
+  service: "memory";
+}

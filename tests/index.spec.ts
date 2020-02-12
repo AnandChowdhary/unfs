@@ -9,31 +9,23 @@ describe("unfs class", () => {
 
   it("creates an object from class", () => {
     const fs = new Unfs({
-      service: "aws-s3",
-      bucket: "example",
-      auth: {}
+      service: "memory"
     });
     expect(typeof fs).toBe("object");
   });
 
   it("gets the configuration", () => {
     const fs = new Unfs({
-      service: "aws-s3",
-      bucket: "example",
-      auth: {}
+      service: "memory"
     });
     expect(fs.getSettings()).toEqual({
-      service: "aws-s3",
-      bucket: "example",
-      auth: {}
+      service: "memory"
     });
   });
 
   it("updates the configuration", () => {
     const fs = new Unfs({
-      service: "aws-s3",
-      bucket: "example",
-      auth: {}
+      service: "memory"
     });
     fs.configure({
       service: "azure",

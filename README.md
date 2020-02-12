@@ -18,6 +18,8 @@ Node.js API like `fs`, but for cloud storage services. If you're used to doing `
 - [ ] Azure Storage
 - [ ] Google Cloud Storage
 - [ ] Firebase Cloud Storage
+- [ ] Local file system
+- [x] In memory (for testing only)
 
 ## 💡 Usage
 

@@ -3,7 +3,8 @@ import {
   IUnfsServiceAzureStorage,
   IUnfsServiceGoogleCloudStorage,
   IUnfsServiceFirebaseCloudStorage,
-  IUnfsServiceLocal
+  IUnfsServiceLocal,
+  IUnfsServiceMemory
 } from "./services/constructor";
 
 export interface IUnfsService {
@@ -19,6 +20,7 @@ export interface IUnfsService {
 export type IUnfsConstructor =
   | IUnfsServiceS3
   | IUnfsServiceLocal
+  | IUnfsServiceMemory
   | IUnfsServiceAzureStorage
   | IUnfsServiceGoogleCloudStorage
   | IUnfsServiceFirebaseCloudStorage;
