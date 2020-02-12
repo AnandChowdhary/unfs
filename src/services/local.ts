@@ -1,5 +1,7 @@
 import { UnfsService } from "../interfaces/services/base";
 import { IUnfsServiceLocal } from "../interfaces/services/constructor";
+import { join } from "path";
+import {} from "fs-extra";
 
 export default class LocalService implements UnfsService {
   settings: IUnfsServiceLocal;
@@ -11,12 +13,10 @@ export default class LocalService implements UnfsService {
 
   async initialize() {
     if (this.initialized) return;
-    // mkdirp here to initialize class
   }
 
   async writeFile(fileName: string, contents: any) {
-    // TODO use path.join after adding @types/node
-    const path = this.settings.directory + "/" + fileName;
+    const path = join(this.settings.directory, fileName);
     return path;
   }
 

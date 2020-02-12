@@ -12,7 +12,8 @@
   "author": "Anand Chowdhary <mail@anandchowdhary.com>",
   "license": "MIT",
   "scripts": {
-    "build": "npm-install-peers && tsc",
+    "build": "tsc",
+    "postinstall": "npm-install-peers",
     "test": "jest --coverage",
     "test-report": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
