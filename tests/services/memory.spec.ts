@@ -16,4 +16,17 @@ describe("Memory", () => {
     const file = await fs.readFile("example.txt");
     expect(file).toBe("Hello, world!");
   });
+
+  it("throws error for unknown service", async () => {
+    let err: Error | undefined = undefined;
+    try {
+      const fs = new Unfs({
+        service: "memory"
+      });
+      const text = await fs.readFile("unknown.txt");
+    } catch (error) {
+      err = error;
+    }
+    expect(err).toBeDefined();
+  });
 });

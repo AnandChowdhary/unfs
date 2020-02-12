@@ -36,4 +36,17 @@ describe("unfs class", () => {
       auth: {}
     });
   });
+
+  it("throws error for unknown service", () => {
+    let err: Error | undefined = undefined;
+    try {
+      const fs = new (Unfs as any)({
+        service: "unknown"
+      });
+      fs.writeFile("example.txt", "Hello, world!");
+    } catch (error) {
+      err = error;
+    }
+    expect(err).toBeDefined();
+  });
 });
