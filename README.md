@@ -4,31 +4,31 @@ Node.js API like `fs`, but for cloud storage services. If you're used to doing `
 
 ## 💡 Usage
 
-With TypeScript or ES6 modules:
+With TypeScript or ES6 async modules:
 
 ```ts
-import { writeFile } from "unfs";
+import Unfs from "unfs";
+const fs = new Unfs({
+  service: "s3",
+  bucket: "s3-bucket-name",
+  auth: {}
+}));
 
-await fs.init({
+const url = await fs.writeFile("message.txt", "Hello, world");
+console.log("url", url);
+```
+
+With Node.js and the Promise API:
+
+```js
+const Unfs = require("unfs");
+const fs = new Unfs({
   service: "s3",
   bucket: "s3-bucket-name",
   auth: {}
 });
-const url = await writeFile("message.txt", "Hello, world");
-console.log("url", url);
-```
 
-With Node.js:
-
-```js
-const fs = require("unfs");
-
-fs.init({
-  service: "s3",
-  bucket: "s3-bucket-name",
-  auth: {}
-})
-  .then(() => fs.writeFile("message.txt", "Hello, world"))
+fs.writeFile("message.txt", "Hello, world")
   .then(url => console.log("url", url))
   .catch(error => console.error("error", error));
 ```
