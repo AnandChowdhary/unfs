@@ -1,7 +1,7 @@
 import { UnfsService } from "../interfaces/services/base";
 import { IUnfsServiceLocal } from "../interfaces/services/constructor";
 import { join } from "path";
-import {} from "fs-extra";
+import { mkdirp, writeFile, readFile } from "fs-extra";
 
 export default class LocalService implements UnfsService {
   settings: IUnfsServiceLocal;
@@ -13,14 +13,18 @@ export default class LocalService implements UnfsService {
 
   async initialize() {
     if (this.initialized) return;
+    await mkdirp(this.settings.directory);
+    this.initialized = true;
   }
 
   async writeFile(fileName: string, contents: any) {
     const path = join(this.settings.directory, fileName);
+    await writeFile(path, contents);
     return path;
   }
 
   async readFile(fileName: string) {
-    return fileName;
+    const path = join(this.settings.directory, fileName);
+    return (await readFile(path)).toString();
   }
 }
