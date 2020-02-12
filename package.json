@@ -8,7 +8,7 @@
     "dist",
     "src"
   ],
-  "repository": "git@github.com:AnandChowdhary/unfs",
+  "repository": "https://github.com/AnandChowdhary/unfs",
   "author": "Anand Chowdhary <mail@anandchowdhary.com>",
   "license": "MIT",
   "scripts": {
