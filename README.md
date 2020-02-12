@@ -3,7 +3,8 @@
 Node.js API like `fs`, but for cloud storage services. If you're used to doing `fs.writeFile()`, this should be easy.
 
 [![Node CI](https://github.com/AnandChowdhary/unfs/workflows/Node%20CI/badge.svg)](https://github.com/AnandChowdhary/unfs/actions?query=workflow%3A%22Node+CI%22)
-[![Checks](https://badgen.net/github/checks/AnandChowdhary/unfs)](https://github.com/AnandChowdhary/unfs/commits/master)
+[![Coverage](https://badgen.net/github/checks/AnandChowdhary/unfs)](https://coveralls.io/github/AnandChowdhary/unfs)
+[![Checks](https://badgen.net/coveralls/c/github/AnandChowdhary/unfs)](https://github.com/AnandChowdhary/unfs/commits/master)
 [![npm version](https://badgen.net/npm/v/unfs)](https://www.npmjs.com/package/unfs)
 [![Types](https://badgen.net/npm/types/unfs)](https://www.npmjs.com/package/unfs)
 [![Dependencies](https://badgen.net/david/dep/AnandChowdhary/unfs)](https://david-dm.org/AnandChowdhary/unfs)

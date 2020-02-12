@@ -16,6 +16,6 @@ jobs:
         run: |
           npm ci
           npm run build
-          npm run test
+          npm run test-report
         env:
           CI: true
