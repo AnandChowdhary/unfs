@@ -42,12 +42,19 @@ export default class Unfs {
     return this.settings;
   }
 
+  private createFileName(filePath: string) {
+    if (this.settings.prefix) filePath = `${this.settings.prefix}${filePath}`;
+    if (this.settings.suffix) filePath = `${filePath}${this.settings.suffix}`;
+    return filePath;
+  }
+
   /**
    * Create a new file in the service
    * @param filePath - File path with name
    * @param content - File contents (text, JSON, binary, Blob, etc.)
    */
   public async writeFile(filePath: string, content: any) {
+    filePath = this.createFileName(filePath);
     await this.service.initialize();
     return await this.service.writeFile(filePath, content);
   }
@@ -57,6 +64,7 @@ export default class Unfs {
    * @param filePath - File path with name
    */
   public async readFile(filePath: string) {
+    filePath = this.createFileName(filePath);
     await this.service.initialize();
     return await this.service.readFile(filePath);
   }

@@ -49,4 +49,32 @@ describe("unfs class", () => {
     }
     expect(err).toBeDefined();
   });
+
+  it("adds file prefix", async () => {
+    const fs = new Unfs({
+      service: "memory",
+      prefix: "prefix_"
+    });
+    const filePath = await fs.writeFile("example.txt", "Hello, world!");
+    expect(filePath.startsWith("prefix_")).toBeTruthy();
+  });
+
+  it("adds file suffix", async () => {
+    const fs = new Unfs({
+      service: "memory",
+      suffix: "_suffix"
+    });
+    const filePath = await fs.writeFile("example.txt", "Hello, world!");
+    expect(filePath.endsWith("_suffix")).toBeTruthy();
+  });
+
+  it("adds file prefix and suffix", async () => {
+    const fs = new Unfs({
+      service: "memory",
+      prefix: "prefix_",
+      suffix: "_suffix"
+    });
+    const filePath = await fs.writeFile("example.txt", "Hello, world!");
+    expect(filePath).toBe("prefix_example.txt_suffix");
+  });
 });

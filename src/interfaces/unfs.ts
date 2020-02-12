@@ -12,6 +12,7 @@ export interface IUnfsService {
   prefix?: string;
   suffix?: string;
   softDelete?: boolean;
+  deletePrefix?: string;
   auth?: {
     [index: string]: any;
   };

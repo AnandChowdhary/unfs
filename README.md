@@ -18,7 +18,7 @@ Node.js API like `fs`, but for cloud storage services. If you're used to doing `
 - [ ] Azure Storage
 - [ ] Google Cloud Storage
 - [ ] Firebase Cloud Storage
-- [ ] Local file system
+- [ ] Memory file system
 - [x] In memory (for testing only)
 
 ## 💡 Usage
@@ -56,6 +56,32 @@ const fs = new Unfs({
 fs.writeFile("message.txt", "Hello, world")
   .then(url => console.log("url", url))
   .catch(error => console.error("error", error));
+```
+
+## ⚒ Configuration
+
+### General
+
+The following constructor properties can be used in all services:
+
+```ts
+const fs = new Unfs({
+  service: "your-service-here", // Select a service from below
+  prefix: "prefix_", // Add prefix to file name before saving
+  suffix: "_suffix", // Add Suffix to file name before saving
+  softDelete: true // Set to `true` to rename instead of deleting files,
+  deletePrefix: "deleted_" // Use with `softDelete` as file prexix
+}));
+```
+
+### Memory
+
+**Note:** You should only use the Memory service in development, since you'll end up using lots of RAM when storing binary files in memory.
+
+```ts
+const fs = new Unfs({
+  service: "memory"
+}));
 ```
 
 ## 📄 License
