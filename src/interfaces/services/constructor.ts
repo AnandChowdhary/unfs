@@ -1,4 +1,4 @@
-import { IUnfsService } from "./unfs";
+import { IUnfsService } from "../unfs";
 
 export interface IUnfsServiceS3 extends IUnfsService {
   service: "aws-s3";
@@ -15,4 +15,9 @@ export interface IUnfsServiceGoogleCloudStorage extends IUnfsService {
 
 export interface IUnfsServiceFirebaseCloudStorage extends IUnfsService {
   service: "firebase-cloud";
+}
+
+export interface IUnfsServiceLocal extends IUnfsService {
+  service: "local";
+  directory: string;
 }
