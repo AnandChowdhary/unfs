@@ -1,0 +1,11 @@
+{
+  "name": "unfs",
+  "version": "0.0.0",
+  "description": "fs-like bindings for popular cloud storage services",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
