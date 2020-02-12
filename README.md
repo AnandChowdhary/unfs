@@ -2,7 +2,20 @@
 
 Node.js API like `fs`, but for cloud storage services. If you're used to doing `fs.writeFile()`, this should be easy.
 
+## ☁️ Services
+
+- [ ] AWS S3
+- [ ] Azure Storage
+- [ ] Google Cloud Storage
+- [ ] Firebase Cloud Storage
+
 ## 💡 Usage
+
+Install the package from [npm](https://www.npmjs.com/package/unfs):
+
+```bash
+npm install unfs
+```
 
 With TypeScript or ES6 async modules:
 
@@ -18,7 +31,7 @@ const url = await fs.writeFile("message.txt", "Hello, world");
 console.log("url", url);
 ```
 
-With Node.js and the Promise API:
+With Node.js using the Promise API:
 
 ```js
 const Unfs = require("unfs");
